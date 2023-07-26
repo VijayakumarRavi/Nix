@@ -27,6 +27,7 @@
        libnotify
        xdg-utils
        graphviz
+       onefetch
 
        # cloud native
        docker

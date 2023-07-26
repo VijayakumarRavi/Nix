@@ -4,6 +4,8 @@
 {
   # Enable networking
   networking.networkmanager.enable = true;
+  # Enable Flakes and the new command-line tool  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -86,6 +88,20 @@
     };
     openFirewall = true;
   };
+
+  # Perform garbage collection weekly to maintain low disk usage
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
+  };
+
+  # Optimize storage
+  # You can also manually optimize the store via:
+  #    nix-store --optimise
+  # Refer to the following link for more details:
+  # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
+  nix.settings.auto-optimise-store = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.vijay = {

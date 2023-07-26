@@ -18,6 +18,10 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
+  # Limit the number of generations to keep
+  # boot.loader.systemd-boot.configurationLimit = 10;
+  boot.loader.grub.configurationLimit = 10;
+
   networking.hostName = "Tux"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
