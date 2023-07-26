@@ -66,7 +66,6 @@
   programs.gnupg.agent = {
     enable = true;
     pinentryFlavor = "curses";
-    pinentry-program = "/run/current-system/sw/bin/pinentry-curses";
     enableSSHSupport = true;
   };
 
