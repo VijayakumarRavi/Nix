@@ -22,13 +22,13 @@
       Tux = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/Tux # /configuration.nix
+          ./hosts/Tux 
 
           home-manager.nixosModules.home-manager {
             home-manager = {
               useUserPackages = true;
               useGlobalPkgs = true;
-              users.vijay = import ./home;
+              users.vijay = import ./hosts/Tux/home; # ./hosts/Tux/home;
             };
           }
         ];

@@ -12,6 +12,34 @@
     username = "vijay";
     homeDirectory = "/home/vijay";
 
+    packages = with pkgs; [
+       # archives
+       zip
+       unzip
+       p7zip
+
+       # utils
+       ripgrep
+       yq-go    # https://github.com/mikefarah/yq
+       htop
+
+       # misc
+       libnotify
+       xdg-utils
+       graphviz
+
+       # cloud native
+       docker
+       terraform
+       docker-compose
+       kubectl
+
+       nodejs
+       nodePackages.npm
+       nodePackages.pnpm
+       yarn
+    ];
+
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
     # when a new Home Manager release introduces backwards

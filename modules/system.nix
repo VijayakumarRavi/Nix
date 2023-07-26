@@ -9,7 +9,11 @@
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_IN";
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "python-2.7.18.6"
+  ];
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_IN";
@@ -106,6 +110,7 @@
     sysstat
     pinentry
     pinentry-curses
+    python2
     gnupg
     lm_sensors  # for `sensors` command
     neofetch
