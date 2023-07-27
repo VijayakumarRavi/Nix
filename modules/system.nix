@@ -4,6 +4,11 @@
 {
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # Enable IP forwarding for tailscale and others to wrok
+  boot.kernel.sysctl."net.ipv4.ip_forward" = "1";
+  boot.kernel.sysctl."net.ipv6.conf.all.forwarding" = "1";
+
   # Enable Flakes and the new command-line tool  
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
