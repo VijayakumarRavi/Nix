@@ -27,9 +27,9 @@
        libnotify
        xdg-utils
        graphviz
+       onefetch
 
        # cloud native
-       docker
        terraform
        docker-compose
        kubectl

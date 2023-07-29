@@ -18,8 +18,18 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "Tux"; # Define your hostname.
+  # Limit the number of generations to keep
+  # boot.loader.systemd-boot.configurationLimit = 10;
+  boot.loader.grub.configurationLimit = 10;
+
+  networking.hostName = "Tux-vm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Enable tailscale
+  services.tailscale.enable = true;
+
+  # Enable docker
+  virtualisation.docker.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
