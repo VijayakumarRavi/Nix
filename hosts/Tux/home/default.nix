@@ -30,7 +30,6 @@
        onefetch
 
        # cloud native
-       docker
        terraform
        docker-compose
        kubectl
