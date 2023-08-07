@@ -4,6 +4,9 @@
 
   imports = [
     ./apps
+    ./nvim
+	./i3
+	./rofi
    ];
 
   # Home Manager needs a bit of information about you and the
@@ -22,6 +25,7 @@
        ripgrep
        yq-go    # https://github.com/mikefarah/yq
        htop
+       neovim
 
        # misc
        libnotify

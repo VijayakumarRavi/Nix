@@ -9,7 +9,7 @@
   boot.kernel.sysctl."net.ipv4.ip_forward" = "1";
   boot.kernel.sysctl."net.ipv6.conf.all.forwarding" = "1";
 
-  # Enable Flakes and the new command-line tool  
+  # Enable Flakes and the new command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Set your time zone.
@@ -41,7 +41,7 @@
   };
 
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       # icon fonts
       material-design-icons
 
@@ -55,7 +55,8 @@
     ];
 
     # use fonts specified by user rather than default ones
-    enableDefaultFonts = false;
+    # enableDefaultFonts = false;
+    enableDefaultPackages = false;
 
     # user defined fonts
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
@@ -128,6 +129,9 @@
     git
     htop
     tmux
+	fzf
+	gcc
+	cmake
     sysstat
     pinentry
     pinentry-curses
